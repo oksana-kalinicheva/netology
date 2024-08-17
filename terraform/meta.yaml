@@ -1,0 +1,11 @@
+#cloud-config
+
+users:
+ - name: oksana
+   groups: sudo
+   shell: /bin/bash
+   sudo: ['ALL=(ALL) NOPASSWD:ALL']
+   ssh-authorized-keys:
+     -  ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCWdKXUXKufokeFHBYTBA4y7BTuB3h55JQwTAStsu6pgNuX3+Tf2EDK2h7KTjv+cq3kQ7YVpwotEWMLrLWrl3wlReUUxyKQh4YuZT9u2RuWHUZARH7Jnp72Xrik52Za+YYJbZFcSYejEUGSLk1XGksmx2k2CY/fTUYoRx2U2Snk1amIhVvuPvvspOUbtW0aTGQRQH9p15fFbiAKaIiDyR8+j+1rNA1SKsVWoFgiWeW2i4mBZaW4sfw1W7r41R7iPN21UFBl+8Q8ykvkgN3K1KtzXOxtTqG7VkOukhSKu2x28xuio+vLZv5+9AKQcGP/UzUOeNCvme1ZCa3y4CcV2u61MyufGgVSbewij7dfK/g4HbRSnj5lf6HesPGxrzfcVtHz2JWixSI34pnjT+ISokNQrKUqst3uRfZN6SX8/m6sJZyZiDhkC1cyBVxM9oOwJo1taBHM3QacdXwQ5q1pPo1LubvMWlgOm+bdoyf729DeRvrZxDm2sEBkqRT2v+j3xh8= kali@kali
+
+
