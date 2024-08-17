@@ -126,7 +126,7 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 
 ![](https://github.com/oksana-kalinicheva/netology/blob/main/screenshots/img-04.png)
 
-Создан HTTP router. Путь указан — /, backend group — указанна.
+Создан HTTP router. Путь указан — /, backend group — указана.
 
 ![](https://github.com/oksana-kalinicheva/netology/blob/main/screenshots/img-05.png)
 
