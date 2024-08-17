@@ -2,7 +2,7 @@ resource "yandex_compute_snapshot_schedule" "daily-snapshot" {
   name = "daily-snapshot"
 
   schedule_policy {
-    expression = "30 1 * * *"
+    expression = "0 0 ? * *"
   }
 
   snapshot_count = 7
