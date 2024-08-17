@@ -111,49 +111,60 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 3. Ожидание моментального ответа на свой вопрос. Дипломные руководители — работающие инженеры, которые занимаются, кроме преподавания, своими проектами. Их время ограничено, поэтому постарайтесь задавать правильные вопросы, чтобы получать быстрые ответы.
 
 ## Решение
-## Сайт
+### Сайт
 При помощи Terraform была поднята инфраструктура. ВМ nginx1 находится в зоне ru-central1-a, ВМ nginx2 - в зоне ru-central1-b, остальные ВМ размещены в зоне ru-central1-d.
+
 ![](https://github.com/oksana-kalinicheva/netology/blob/main/screenshots/img-01.png)
+
 ![](https://github.com/oksana-kalinicheva/netology/blob/main/screenshots/img-02.png)
 
 Создана Target Group и в неё включены две ВМ с nginx'ом.
+
 ![](https://github.com/oksana-kalinicheva/netology/blob/main/screenshots/img-03.png)
 
 Создана Backend Group настроена на target group. Настроен healthcheck на корень (/) и порт 80, протокол HTTP.
+
 ![](https://github.com/oksana-kalinicheva/netology/blob/main/screenshots/img-04.png)
 
 Создан HTTP router. Путь указан — /, backend group — указанна.
+
 ![](https://github.com/oksana-kalinicheva/netology/blob/main/screenshots/img-05.png)
 
 Создан Application load balancer для распределения трафика на веб-сервера, созданные ранее. Указан HTTP router, созданный ранее, задан listener тип auto, порт 80.
+
 ![](https://github.com/oksana-kalinicheva/netology/blob/main/screenshots/img-06.png)
 
 Протестирован сайт с помощью curl.
+
 ![](https://github.com/oksana-kalinicheva/netology/blob/main/screenshots/img-07.png)
 
-Веб-морда
+Веб-морда:
+
 ![](https://github.com/oksana-kalinicheva/netology/blob/main/screenshots/img-08.png)
 
-## Мониторинг
+### Мониторинг
 
 Поднят zabbix-server и установлены агенты на каждую ВМ при помощи Ansible. 
 Доступ в [Zabbix](https://51.250.44.156:8080/) (логин и пароль): Admin/zabbix.
+
 ![](https://github.com/oksana-kalinicheva/netology/blob/main/screenshots/img-09.png)
 
 ![](https://github.com/oksana-kalinicheva/netology/blob/main/screenshots/img-10.png)
 
-## Логи
+### Логи
 
 ELF был развернут посредством Ansible, с использованием ansible скриптов и копирования конфигов. Доступ в [Kibana](http://51.250.32.201:5601/).
+
 ![](https://github.com/oksana-kalinicheva/netology/blob/main/screenshots/img-11.png)
 
-## Сеть
+### Сеть
 
 Развернут VPC:
 
 Сервера: nginx1 - приватная подсеть; nginx2 - приватная подсеть; elastic - приватная подсеть; zabbix - публичная подсеть; kibana - публичная подсеть;
 
 Сервис: application load balancer - публичная подсеть.
+
 ![](https://github.com/oksana-kalinicheva/netology/blob/main/screenshots/img-12.png)
 
 ![](https://github.com/oksana-kalinicheva/netology/blob/main/screenshots/img-13.png)
@@ -162,6 +173,6 @@ ELF был развернут посредством Ansible, с использ�
 
 Данные для подключения и выполнения скриптов ansible лежат в файле hosts.
 
-## Резервное копирование
+### Резервное копирование
 
 ![](https://github.com/oksana-kalinicheva/netology/blob/main/screenshots/img-14.png)
