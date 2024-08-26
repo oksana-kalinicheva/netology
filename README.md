@@ -145,7 +145,7 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 ### Мониторинг
 
 Поднят zabbix-server и установлены агенты на каждую ВМ при помощи Ansible. 
-Доступ в [Zabbix](http://51.250.44.156:8080) (логин и пароль): Admin/zabbix.
+Доступ в [Zabbix](http://84.201.144.192:8080/) (логин и пароль): Admin/zabbix.
 
 ![](https://github.com/oksana-kalinicheva/netology/blob/main/screenshots/img-09.png)
 
@@ -153,7 +153,7 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 
 ### Логи
 
-ELF был развернут посредством Ansible, с использованием ansible скриптов и копирования конфигов. Доступ в [Kibana](http://51.250.32.201:5601/).
+ELF был развернут посредством Ansible, с использованием ansible скриптов и копирования конфигов. Доступ в [Kibana](http://84.201.149.3:5601/).
 
 ![](https://github.com/oksana-kalinicheva/netology/blob/main/screenshots/img-11.png)
 
